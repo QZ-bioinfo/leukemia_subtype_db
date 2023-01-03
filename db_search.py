@@ -1,4 +1,5 @@
 import pymongo
+import json
 
 client = pymongo.MongoClient('')
 
@@ -57,16 +58,21 @@ class db_search(object):
         return_dic = {}
         num = 1
         if dic['data_type'] == 'as':
-            for single_record in search_dic[dic['data_type']][dic['cell_type']].find({'geneID':dic['id']}):
+            for single_record in search_dic[dic['data_type']][dic['cell_type']].find({'geneSymbol':dic['gene_name']}):
                 single_record.pop('_id')
                 return_dic[num] = single_record
                 num += 1
-            return return_dic
-        for single_record in search_dic[dic['data_type']][dic['cell_type']].find({'id':dic['id']}):
-            single_record.pop('_id')
-            return_dic[num] = single_record
-            num += 1 
-        return return_dic
+        if dic['data_type'] == 'lnc':
+            for single_record in search_dic[dic['data_type']][dic['cell_type']].find({'id':dic['id']}):
+                single_record.pop('_id')
+                return_dic[num] = single_record
+                num += 1
+        if dic['data_type'] == 'pc':
+            for single_record in search_dic[dic['data_type']][dic['cell_type']].find({'gene_name':dic['gene_name']}):
+                single_record.pop('_id')
+                return_dic[num] = single_record
+                num += 1
+        return str(json.dumps(return_dic))
 
     def get_total_(self):
         return_dic = {}
@@ -79,10 +85,4 @@ class db_search(object):
             return_dic['Protein-Coding-RNA'][key] = value.count_documents({})
         for key,value in as_dic.items(): 
             return_dic['alternative-splicing'][key] = value.count_documents({})
-        return return_dic
-
-
-
-
-
-
+        return str(json.dumps(return_dic))
