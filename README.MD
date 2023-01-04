@@ -3,19 +3,12 @@
 <a href="#1">1\. 查询指定数据库数据</a>
 
 <a href="#2">2\.统计全部数据</a>
-<<<<<<< HEAD
 
 <a href="#3">3\.与正常值差异</a>
-=======
->>>>>>> da2314c9faf88f64ed9f4d094a447f93f33b318b
 
 ---
 
 ## <a id="1">1\.查询指定数据库数据</a>
-<<<<<<< HEAD
-
-=======
->>>>>>> da2314c9faf88f64ed9f4d094a447f93f33b318b
 #### 接口功能
 > 获取不同类型白血病，不同molecule modules的数据
 
@@ -39,11 +32,7 @@ gene_name    |false    |string|此项为请求Protein-Coding-RNA、Alternative-S
 #### lncRNA数据返回字段
 返回字段|字段类型|
 -----   |:------
-<<<<<<< HEAD
 Mean_exp  |float |
-=======
-Mean_exp  |string |
->>>>>>> da2314c9faf88f64ed9f4d094a447f93f33b318b
 id |string |
 type |string |
 chromosome |string |
@@ -52,8 +41,7 @@ end |string |
 strand |string |
 
 #### 接口示例
-<<<<<<< HEAD
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=lnc&cell_type=B-Cell-ALL&lnc_id=NONHSAG058641.2]
+> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=lnc&cell_type=B-Cell-ALL&id=NONHSAG058641.2]
 
 {"data": [{"Mean_exp": 0.018, "id": "NONHSAG058641.2", "type": "intergenic", "chromosome": "1", "start": "36273", "end": "50392", "strand": "-"}], "total": 1}
 
@@ -61,26 +49,6 @@ strand |string |
 返回字段|字段类型|
 -----   |:------
 |Mean_exp  |float |
-=======
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=lnc&cell_type=B-Cell-ALL&id=NONHSAG058641.2]
-
-{
-    "1":{
-        "Mean_exp":"0.00064",
-        "id":"NONHSAG058641.2",
-        "type":"intergenic",
-        "chromosome":"1",
-        "start":"36273",
-        "end":"50392",
-        "strand":"-"
-    }
-}
-
-#### Protein-Coding-RNA数据返回字段
-返回字段|字段类型|
------   |:------
-|Mean_exp  |string |
->>>>>>> da2314c9faf88f64ed9f4d094a447f93f33b318b
 |id |string |
 |gene_name |string |
 |chromosome |string |
@@ -89,27 +57,10 @@ strand |string |
 |strand |string |
 
 #### 接口示例
-<<<<<<< HEAD
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=Protein-Coding-RNA&cell_type=B-Cell-ALL&gene_name=ZBP1]
+> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=Protein-Coding-RNA&cell_type=B-Cell-ALL&id=ZBP1]
 
 {"data": [{"Mean_exp": 3.0, "id": "ENSG00000124256", "gene_name": "ZBP1", "chromosome": "20", "start": "57603846", "end": "57620576", "strand": "-"}], "total": 1}
 
-=======
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=lnc&cell_type=B-Cell-ALL&id=NONHSAG058641.2]
-
-{
-    "1":{
-        "Mean_exp":"0.00064",
-        "id":"NONHSAG058641.2",
-        "type":"intergenic",
-        "chromosome":"1",
-        "start":"36273",
-        "end":"50392",
-        "strand":"-"
-}
-}
-
->>>>>>> da2314c9faf88f64ed9f4d094a447f93f33b318b
 #### Alternative-Splicing数据返回字段
 
 ##### SE:
@@ -241,18 +192,10 @@ strand |string |
 }
 
 #### 接口示例
-<<<<<<< HEAD
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=Alternative-Splicing&cell_type=T-Cell-ALL&gene_name=ZBP1]
-
----
-## <a id="2">2\. 统计全部数据</a>
-
-=======
 > 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=Alternative-Splicing&cell_type=T-Cell-ALL&id=ZBP1]
 
 ---
 ## <a id="2">2\. 统计全部数据</a>
->>>>>>> da2314c9faf88f64ed9f4d094a447f93f33b318b
 #### 接口功能
 > 统计数据库全部数据
 
@@ -271,7 +214,7 @@ strand |string |
 #### 接口示例
 > 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/total]
 
-## <a id="3">3\.与正常值差异</a>
+## <a id="3">3\.与正常值差异(目前仅支持lncRNA)</a>
 
 #### 接口功能
 > 查询正常白细胞表达数据平均值与指定类型白血病表达数据平均值差异(目前仅支持lncRNA)
