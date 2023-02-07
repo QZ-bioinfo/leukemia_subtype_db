@@ -13,7 +13,7 @@
 > 获取不同类型白血病，不同molecule modules的数据
 
 #### URL
-> [https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search]
+> [https://service-4bv1aeo1-1302618926.bj.apigw.tencentcs.com/release/search]
 
 #### 支持格式
 > JSON
@@ -41,7 +41,7 @@ end |string |
 strand |string |
 
 #### 接口示例
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=lnc&cell_type=B-Cell-ALL&id=NONHSAG058641.2]
+> 地址：[https://service-4bv1aeo1-1302618926.bj.apigw.tencentcs.com/release/search?data_type=lnc&cell_type=B-Cell-ALL&id=NONHSAG058641.2]
 
 {"data": [{"Mean_exp": 0.018, "id": "NONHSAG058641.2", "type": "intergenic", "chromosome": "1", "start": "36273", "end": "50392", "strand": "-"}], "total": 1}
 
@@ -57,7 +57,7 @@ strand |string |
 |strand |string |
 
 #### 接口示例
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=Protein-Coding-RNA&cell_type=B-Cell-ALL&id=ZBP1]
+> 地址：[https://service-4bv1aeo1-1302618926.bj.apigw.tencentcs.com/release/search?data_type=Protein-Coding-RNA&cell_type=B-Cell-ALL&id=ZBP1]
 
 {"data": [{"Mean_exp": 3.0, "id": "ENSG00000124256", "gene_name": "ZBP1", "chromosome": "20", "start": "57603846", "end": "57620576", "strand": "-"}], "total": 1}
 
@@ -192,7 +192,7 @@ strand |string |
 }
 
 #### 接口示例
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/search?data_type=Alternative-Splicing&cell_type=T-Cell-ALL&id=ZBP1]
+> 地址：[https://service-4bv1aeo1-1302618926.bj.apigw.tencentcs.com/release/search?data_type=Alternative-Splicing&cell_type=T-Cell-ALL&id=ZBP1]
 
 ---
 ## <a id="2">2\. 统计全部数据</a>
@@ -200,7 +200,7 @@ strand |string |
 > 统计数据库全部数据
 
 #### URL
-> [https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/total]
+> [https://service-4bv1aeo1-1302618926.bj.apigw.tencentcs.com/release/total]
 
 #### 支持格式
 > JSON
@@ -212,7 +212,7 @@ strand |string |
 > 无
 
 #### 接口示例
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/total]
+> 地址：[https://service-4bv1aeo1-1302618926.bj.apigw.tencentcs.com/release/total]
 
 ## <a id="3">3\.与正常值差异(目前仅支持lncRNA)</a>
 
@@ -220,7 +220,7 @@ strand |string |
 > 查询正常白细胞表达数据平均值与指定类型白血病表达数据平均值差异(目前仅支持lncRNA)
 
 #### URL
-> [https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/diff]
+> [https://service-4bv1aeo1-1302618926.bj.apigw.tencentcs.com/release/diff]
 
 #### 支持格式
 > JSON
@@ -247,6 +247,6 @@ strand |string |
 
 #### 接口示例
 
-> 地址：[https://service-k6j63b0h-1302618926.sh.apigw.tencentcs.com/release/diff?cell_type=["AML","CML"]&lnc_id=NONHSAG058641.2]
+> 地址：[https://service-4bv1aeo1-1302618926.bj.apigw.tencentcs.com/release/diff?cell_type=["AML","CML"]&lnc_id=NONHSAG058641.2]
 
 {"Normal_white_cell": [{"id": "NONHSAG058641.2", "Mean_exp": 0.0}], "AML": [{"Mean_exp": 0.018, "id": "NONHSAG058641.2", "type": "intergenic", "chromosome": "1", "start": "36273", "end": "50392", "strand": "-"}], "CML": []}
